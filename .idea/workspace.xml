@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="初始化项目">
-      <change afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="添加ReadMe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/InsertPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/InsertPayload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/Payload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/Payload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,13 +80,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="fastjsonChecker [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -124,7 +124,8 @@
       <option name="presentableId" value="Default" />
       <updated>1705625325827</updated>
       <workItem from="1705625328658" duration="21264000" />
-      <workItem from="1705887349899" duration="6214000" />
+      <workItem from="1705887349899" duration="7488000" />
+      <workItem from="1705906266118" duration="4058000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1705654780911</created>
@@ -133,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705654780911</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加ReadMe">
+      <created>1705894225911</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705894225911</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +160,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化项目" />
+    <MESSAGE value="添加ReadMe" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加ReadMe" />
   </component>
 </project>

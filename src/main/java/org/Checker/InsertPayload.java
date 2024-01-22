@@ -3,7 +3,7 @@ package org.Checker;
 import java.awt.*;
 import java.awt.datatransfer.*;
 import java.io.IOException;
-
+//右键粘贴payload实现类
 public class InsertPayload extends Robot {
 
     public InsertPayload() throws AWTException {
@@ -35,6 +35,7 @@ public class InsertPayload extends Robot {
         return os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0;
     }
 
+    //插入payload，通过把payload复制到粘贴板，模拟键盘ctrl+v 实现粘贴
     public void inputString(String str) {
         delay(100);
         Clipboard clip = Toolkit.getDefaultToolkit().getSystemClipboard();

