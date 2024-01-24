@@ -2,7 +2,10 @@ package org.Checker;
 
 import java.awt.*;
 import java.awt.datatransfer.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.Objects;
+
 //右键粘贴payload实现类
 public class InsertPayload extends Robot {
 
@@ -67,10 +70,12 @@ public class InsertPayload extends Robot {
             } catch (IOException e2) {
             }
         } else if (isUnix()) {
+            //设置一定延迟
             delay(100);
             inputWithCtrlAndShift(86);
             delay(100);
         }
+        //todo 把剪贴板内容替换回去
         //clip.setContents(origin, (ClipboardOwner) null);
         delay(100);
     }

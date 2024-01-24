@@ -9,6 +9,7 @@
 - 拆分多级菜单，优化菜单逻辑，将测试版本、DNSLog、bypasswaf拆分开
 - 添加bypasswaf功能，预期是选中一部分json字符串，通过添加大量字符、无效字符、unicode编码等实现
 - 优化提示和日志输出、联动burp的dnslog和漏洞输出
+- 测试其他系统下的复制粘贴功能（模拟键盘，目前没测试）
 
 ## 参考
 [safe6Sec/Fastjson](https://github.com/safe6Sec/Fastjson)

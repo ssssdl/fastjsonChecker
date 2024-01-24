@@ -7,20 +7,28 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class  BurpExtender implements IBurpExtender {
+public class  BurpExtender implements IBurpExtender ,IContextMenuFactory {
 
+    private IBurpExtenderCallbacks callbacks;
     @Override
     public void registerExtenderCallbacks(IBurpExtenderCallbacks callbacks) {
+        this.callbacks = callbacks;
         //设置插件名称
         callbacks.setExtensionName("Fastjson Checker");
         //打印插件日志
         callbacks.printOutput("loaded!!");
         //添加右键菜单
-        menu mapper = new menu(callbacks, this);
-        callbacks.registerContextMenuFactory(mapper);
+        callbacks.registerContextMenuFactory(this);
+//        menu mapper = new menu(callbacks, this);
+//        callbacks.registerContextMenuFactory(mapper);
 
 
     }
 
 
+    @Override
+    public List<JMenuItem> createMenuItems(IContextMenuInvocation invocation) {
+        menu mapper = new menu(callbacks, this);
+        return mapper.createMenuItems(invocation);
+    }
 }
