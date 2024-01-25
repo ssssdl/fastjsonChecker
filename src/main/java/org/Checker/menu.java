@@ -124,12 +124,12 @@ public class menu implements IContextMenuFactory {
                     }
                     // 获取用户所选文本的起始和结束位置
                     int[] selectionBounds = invocation.getSelectionBounds();
-                    int selectionStart = selectionBounds[0];
-                    int selectionEnd = selectionBounds[1];
+                    int selectionStart = selectionBounds[0]+1;
+                    int selectionEnd = selectionBounds[1]+1;
                     String selectedContent = new String(selectedData);
                     callbacks.printOutput(selectedContent.substring(selectionStart,selectionEnd));
                     //对selectedContent.substring(selectionStart,selectionEnd) 进行编码
-                    String  encodeedPayload = encode.convertToJsonUnicode(selectedContent.substring(selectionStart,selectionEnd));
+                    String  encodeedPayload = encode.encodeToJsonUnicode(selectedContent.substring(selectionStart,selectionEnd));
                     InsertPayload iPayload = new InsertPayload();
                     iPayload.inputString(encodeedPayload);
                 } catch(Exception e1){
@@ -138,6 +138,43 @@ public class menu implements IContextMenuFactory {
             }
         });
         CheckerMenuItemBypassWaf.add(MenuItemBypassWafUnicode);
+        JMenuItem MenuItemBypassWafHex = new JMenuItem("Hex");
+        MenuItemBypassWafHex.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+
+                    IHttpRequestResponse[] messages = invocation.getSelectedMessages();
+                    byte[] selectedData = null;
+
+                    // 获取上下文类型
+                    int context = invocation.getInvocationContext();
+
+                    if (context == IContextMenuInvocation.CONTEXT_MESSAGE_EDITOR_REQUEST ||
+                            context == IContextMenuInvocation.CONTEXT_MESSAGE_VIEWER_REQUEST) {
+                        // 在请求编辑器或请求查看器中
+                        selectedData = messages[0].getRequest();
+                    } else if (context == IContextMenuInvocation.CONTEXT_MESSAGE_EDITOR_RESPONSE ||
+                            context == IContextMenuInvocation.CONTEXT_MESSAGE_VIEWER_RESPONSE) {
+                        // 在响应编辑器或响应查看器中
+                        selectedData = messages[0].getResponse();
+                    }
+                    // 获取用户所选文本的起始和结束位置
+                    int[] selectionBounds = invocation.getSelectionBounds();
+                    int selectionStart = selectionBounds[0]+1;
+                    int selectionEnd = selectionBounds[1]+1;
+                    String selectedContent = new String(selectedData);
+                    callbacks.printOutput(selectedContent.substring(selectionStart,selectionEnd));
+                    //对selectedContent.substring(selectionStart,selectionEnd) 进行编码
+                    String  encodeedPayload = encode.encodeToJsonHex(selectedContent.substring(selectionStart,selectionEnd));
+                    InsertPayload iPayload = new InsertPayload();
+                    iPayload.inputString(encodeedPayload);
+                } catch(Exception e1){
+                    callbacks.printError(e1.getMessage());
+                }
+            }
+        });
+        CheckerMenuItemBypassWaf.add(MenuItemBypassWafHex);
         CheckerMenuItem.add(CheckerMenuItemBypassWaf);
 
         list.add(CheckerMenuItem);

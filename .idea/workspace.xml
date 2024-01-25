@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="拆分菜单">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/Checker/encode.java" afterDir="false" />
+    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="初步实现unicode编码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/BurpExtender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/BurpExtender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/InsertPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/InsertPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/encode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/encode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +86,20 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="应用程序.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.Checker.Main" />
+      <module name="fastjsonChecker.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.Checker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="fastjsonChecker [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -113,6 +124,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.fastjsonChecker [shadowJar]" />
+        <item itemvalue="应用程序.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +140,9 @@
       <workItem from="1705887349899" duration="7488000" />
       <workItem from="1705906266118" duration="5366000" />
       <workItem from="1705971004289" duration="14101000" />
-      <workItem from="1706056908214" duration="6010000" />
+      <workItem from="1706056908214" duration="12339000" />
+      <workItem from="1706148303378" duration="108000" />
+      <workItem from="1706150680930" duration="960000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1705654780911</created>
@@ -151,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705912836051</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="初步实现unicode编码">
+      <created>1706065217735</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706065217735</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +193,7 @@
     <MESSAGE value="初始化项目" />
     <MESSAGE value="添加ReadMe" />
     <MESSAGE value="拆分菜单" />
-    <option name="LAST_COMMIT_MESSAGE" value="拆分菜单" />
+    <MESSAGE value="初步实现unicode编码" />
+    <option name="LAST_COMMIT_MESSAGE" value="初步实现unicode编码" />
   </component>
 </project>

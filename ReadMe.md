@@ -4,10 +4,10 @@
 ## Usage
 如图，在需要插入payload的地方右键选择对应payload，即可快速插入payload，相关提示会显示在插件日志中:
 ![img.png](img.png)
-
+bypass模块，选中其中一部分，右键指定编码模式，自动将引号内部进行编码
+![img_1.png](img_1.png)
 ## TODO
-- 拆分多级菜单，优化菜单逻辑，将测试版本、DNSLog、bypasswaf拆分开
-- 添加bypasswaf功能，预期是选中一部分json字符串，通过添加大量字符、无效字符、unicode编码等实现
+- 优化bypasswaf功能，目前只添加了两种编码，后期希望加入混合编码，插入无效字符等混合随机模式
 - 优化提示和日志输出、联动burp的dnslog和漏洞输出
 - 测试其他系统下的复制粘贴功能（模拟键盘，目前没测试）
 
