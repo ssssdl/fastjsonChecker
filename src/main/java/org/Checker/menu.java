@@ -124,8 +124,8 @@ public class menu implements IContextMenuFactory {
                     }
                     // 获取用户所选文本的起始和结束位置
                     int[] selectionBounds = invocation.getSelectionBounds();
-                    int selectionStart = selectionBounds[0]+1;
-                    int selectionEnd = selectionBounds[1]+1;
+                    int selectionStart = selectionBounds[0];
+                    int selectionEnd = selectionBounds[1];
                     String selectedContent = new String(selectedData);
                     callbacks.printOutput(selectedContent.substring(selectionStart,selectionEnd));
                     //对selectedContent.substring(selectionStart,selectionEnd) 进行编码
@@ -161,8 +161,8 @@ public class menu implements IContextMenuFactory {
                     }
                     // 获取用户所选文本的起始和结束位置
                     int[] selectionBounds = invocation.getSelectionBounds();
-                    int selectionStart = selectionBounds[0]+1;
-                    int selectionEnd = selectionBounds[1]+1;
+                    int selectionStart = selectionBounds[0];
+                    int selectionEnd = selectionBounds[1];
                     String selectedContent = new String(selectedData);
                     callbacks.printOutput(selectedContent.substring(selectionStart,selectionEnd));
                     //对selectedContent.substring(selectionStart,selectionEnd) 进行编码

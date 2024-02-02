@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="初步实现unicode编码">
+    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="添加了两种编码">
+      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/encode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/encode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +88,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
-  <component name="RunManager" selected="应用程序.Main">
+  <component name="RunManager" selected="Gradle.fastjsonChecker [shadowJar]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.Checker.Main" />
       <module name="fastjsonChecker.main" />
@@ -142,7 +144,9 @@
       <workItem from="1705971004289" duration="14101000" />
       <workItem from="1706056908214" duration="12339000" />
       <workItem from="1706148303378" duration="108000" />
-      <workItem from="1706150680930" duration="960000" />
+      <workItem from="1706150680930" duration="2231000" />
+      <workItem from="1706772395885" duration="68000" />
+      <workItem from="1706860541884" duration="3300000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1705654780911</created>
@@ -172,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706065217735</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加了两种编码">
+      <created>1706151919590</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706151919590</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +205,7 @@
     <MESSAGE value="添加ReadMe" />
     <MESSAGE value="拆分菜单" />
     <MESSAGE value="初步实现unicode编码" />
-    <option name="LAST_COMMIT_MESSAGE" value="初步实现unicode编码" />
+    <MESSAGE value="添加了两种编码" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了两种编码" />
   </component>
 </project>
