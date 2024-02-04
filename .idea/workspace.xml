@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="添加了两种编码">
-      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/img_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/img_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/img_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/img_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/InsertPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/InsertPayload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/Checker/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Checker/menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +91,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\code\fastjsonChecker\fastjsonChecker\img" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.fastjsonChecker [shadowJar]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.Checker.Main" />
@@ -146,7 +154,8 @@
       <workItem from="1706148303378" duration="108000" />
       <workItem from="1706150680930" duration="2231000" />
       <workItem from="1706772395885" duration="68000" />
-      <workItem from="1706860541884" duration="3300000" />
+      <workItem from="1706860541884" duration="3387000" />
+      <workItem from="1707006929130" duration="1597000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1705654780911</created>
@@ -183,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706151919590</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="添加了两种编码">
+      <created>1706864207379</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706864207379</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -10,6 +10,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +38,14 @@ public class menu implements IContextMenuFactory {
             //监听菜单点击事件
             MenuItemPayload.addActionListener(new ActionListener() { // from class: com.professionallyevil.co2.sqlmapper.SQLMapper.1
                 public void actionPerformed(ActionEvent e) {
+                    System.setProperty("file.encoding", "UTF-8");
+
+                    // 重新加载系统属性
+                    try {
+                        System.setOut(new java.io.PrintStream(System.out, true, "UTF-8"));
+                    } catch (UnsupportedEncodingException e1) {
+                        e1.printStackTrace();
+                    }
                     try {
                         callbacks.printOutput(payload.getDetails());
                         //粘贴对应的payload
@@ -60,6 +69,14 @@ public class menu implements IContextMenuFactory {
             //监听菜单点击事件
             MenuItemPayload.addActionListener(new ActionListener() { // from class: com.professionallyevil.co2.sqlmapper.SQLMapper.1
                 public void actionPerformed(ActionEvent e) {
+                    System.setProperty("file.encoding", "UTF-8");
+
+                    // 重新加载系统属性
+                    try {
+                        System.setOut(new java.io.PrintStream(System.out, true, "UTF-8"));
+                    } catch (UnsupportedEncodingException e1) {
+                        e1.printStackTrace();
+                    }
                     try {
                         callbacks.printOutput(dnslog.getDetails());
                         //粘贴对应的payload
@@ -84,6 +101,14 @@ public class menu implements IContextMenuFactory {
             //监听菜单点击事件
             MenuItemversion.addActionListener(new ActionListener() { // from class: com.professionallyevil.co2.sqlmapper.SQLMapper.1
                 public void actionPerformed(ActionEvent e) {
+                    System.setProperty("file.encoding", "UTF-8");
+
+                    // 重新加载系统属性
+                    try {
+                        System.setOut(new java.io.PrintStream(System.out, true, "UTF-8"));
+                    } catch (UnsupportedEncodingException e1) {
+                        e1.printStackTrace();
+                    }
                     try {
                         callbacks.printOutput(version.getDetails());
                         //粘贴对应的payload
@@ -106,7 +131,14 @@ public class menu implements IContextMenuFactory {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
+                    System.setProperty("file.encoding", "UTF-8");
 
+                    // 重新加载系统属性
+                    try {
+                        System.setOut(new java.io.PrintStream(System.out, true, "UTF-8"));
+                    } catch (UnsupportedEncodingException e1) {
+                        e1.printStackTrace();
+                    }
                     IHttpRequestResponse[] messages = invocation.getSelectedMessages();
                     byte[] selectedData = null;
 
@@ -143,7 +175,14 @@ public class menu implements IContextMenuFactory {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
+                    System.setProperty("file.encoding", "UTF-8");
 
+                    // 重新加载系统属性
+                    try {
+                        System.setOut(new java.io.PrintStream(System.out, true, "UTF-8"));
+                    } catch (UnsupportedEncodingException e1) {
+                        e1.printStackTrace();
+                    }
                     IHttpRequestResponse[] messages = invocation.getSelectedMessages();
                     byte[] selectedData = null;
 

@@ -39,7 +39,7 @@ public class InsertPayload extends Robot {
     }
 
     //插入payload，通过把payload复制到粘贴板，模拟键盘ctrl+v 实现粘贴
-    public void inputString(String str) {
+    public void inputString(String str) throws AWTException {
         delay(100);
         Clipboard clip = Toolkit.getDefaultToolkit().getSystemClipboard();
         Transferable origin = clip.getContents((Object) null);
@@ -53,26 +53,32 @@ public class InsertPayload extends Robot {
             // InputChar(69);
             // InputChar(80);
         } else if (isMac()) {
-            String text = "";
-            Transferable trans = clip.getContents((Object) null);
-            if (trans != null && trans.isDataFlavorSupported(DataFlavor.stringFlavor)) {
-                try {
-                    text = (String) trans.getTransferData(DataFlavor.stringFlavor);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            String script = "tell application \"Terminal\"\n do script \"" + text + "\"";
-            ProcessBuilder pb = new ProcessBuilder("osascript", "-e", script + "\n end tell");
-            pb.inheritIO();
-            try {
-                pb.start();
-            } catch (IOException e2) {
-            }
+//            String text = "";
+//            Transferable trans = clip.getContents((Object) null);
+//            if (trans != null && trans.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+//                try {
+//                    text = (String) trans.getTransferData(DataFlavor.stringFlavor);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            String script = "tell application \"Terminal\"\n do script \"" + text + "\"";
+//            ProcessBuilder pb = new ProcessBuilder("osascript", "-e", script + "\n end tell");
+//            pb.inheritIO();
+//            try {
+//                pb.start();
+//            } catch (IOException e2) {
+//            }
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_META); // Command键
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_META); // Command键
         } else if (isUnix()) {
             //设置一定延迟
             delay(100);
-            inputWithCtrlAndShift(86);
+            //inputWithCtrlAndShift(86);
+            inputWithCtrl(86);
             delay(100);
         }
         //todo 把剪贴板内容替换回去
