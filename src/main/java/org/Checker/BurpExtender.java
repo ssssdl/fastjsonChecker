@@ -2,12 +2,13 @@ package org.Checker;
 
 import burp.*;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class  BurpExtender implements IBurpExtender ,IContextMenuFactory {
+public class  BurpExtender implements IBurpExtender ,IContextMenuFactory,IMessageEditorTabFactory {
 
     private IBurpExtenderCallbacks callbacks;
     @Override
@@ -21,6 +22,7 @@ public class  BurpExtender implements IBurpExtender ,IContextMenuFactory {
         callbacks.registerContextMenuFactory(this);
 //        menu mapper = new menu(callbacks, this);
 //        callbacks.registerContextMenuFactory(mapper);
+        callbacks.registerMessageEditorTabFactory((IMessageEditorTabFactory) this);
 
 
     }
@@ -31,4 +33,9 @@ public class  BurpExtender implements IBurpExtender ,IContextMenuFactory {
         menu mapper = new menu(callbacks, this);
         return mapper.createMenuItems(invocation);
     }
+
+    public burp.IMessageEditorTab createNewInstance(IMessageEditorController controller, boolean editable) {
+        return new IMessageEditorTab(callbacks, this);
+    }
+
 }
