@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="1、修改了提示信息&#10;2、basswaf增加了混合编码">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="1、修改了提示信息&#10;2、basswaf增加了混合编码" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +76,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="temp" />
+                    <option name="lastUsedInstant" value="1709531286" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
                     <option name="lastUsedInstant" value="1707010377" />
@@ -173,7 +175,7 @@
       <workItem from="1706860541884" duration="3387000" />
       <workItem from="1707006929130" duration="4716000" />
       <workItem from="1708673812210" duration="5619000" />
-      <workItem from="1709516344531" duration="7356000" />
+      <workItem from="1709516344531" duration="7777000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1705654780911</created>
@@ -245,7 +247,21 @@
       <option name="project" value="LOCAL" />
       <updated>1709523347178</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1、修改了提示信息&#10;2、basswaf增加了混合编码">
+      <created>1709531418526</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709531418526</updated>
+    </task>
+    <task id="LOCAL-00012" summary="1、修改了提示信息&#10;2、basswaf增加了混合编码">
+      <created>1709531458990</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709531458990</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +272,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
