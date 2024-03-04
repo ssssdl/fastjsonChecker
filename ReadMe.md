@@ -6,14 +6,14 @@
 ![img_3.png](img/img_3.png)
 ![img_4.png](img/img_4.png)
 ## Usage
-如图，在需要插入payload的地方右键选择对应payload，即可快速插入payload，相关提示会显示在插件日志中:
+如图，在需要插入payload的地方右键选择对应payload，即可快速插入payload，相关提示会显示在插件日志中，并且支持一些常见的bypass手段:
 ![img.png](img/img.png)
-bypass模块，选中其中一部分，右键指定编码模式，自动将引号内部进行编码
+bypass模块，选中其中一部分，右键指定编码模式，自动将引号内部进行编码1
 ![img_1.png](img/img_1.png)
 ## TODO
-- 优化bypasswaf功能，目前只添加了两种编码，后期希望加入混合编码，插入无效字符等混合随机模式
-- 优化提示和日志输出、联动burp的dnslog和漏洞输出
-- 测试其他系统下的复制粘贴功能（模拟键盘，目前没测试）
+- 优化bypasswaf功能，目前只添加了两种编码和随机混合编码，后期继续加入插入无效字符等混合随机模式
+- 联动burp的dnslog和漏洞输出
+
 
 ## 参考
 - [safe6Sec/Fastjson](https://github.com/safe6Sec/Fastjson)

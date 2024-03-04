@@ -11,6 +11,7 @@ import java.awt.datatransfer.Transferable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class menu implements IContextMenuFactory {
     @Override
     public List<JMenuItem> createMenuItems(IContextMenuInvocation invocation) {
         List<JMenuItem> list = new ArrayList<>();
-        //创建单级右键菜单 //todo 设置多级菜单，并且添加插入功能
+        //创建单级右键菜单
         JMenuItem CheckerMenuItem = new JMenu("Fastjson Checker");
         JMenuItem CheckerMenuItemPayload = new JMenu("payload");
 
@@ -51,6 +52,9 @@ public class menu implements IContextMenuFactory {
                         //粘贴对应的payload
                         InsertPayload iPayload = new InsertPayload();
                         iPayload.inputString(payload.getPayload());
+                        IMessageEditorTab.isEnabled = true;//显示提示选项卡
+                        IMessageEditorTab.Massage=payload.getDetails();//打印消息
+
                     } catch (Exception e1) {
                         callbacks.printError(e1.getMessage());
                     }
@@ -214,6 +218,52 @@ public class menu implements IContextMenuFactory {
             }
         });
         CheckerMenuItemBypassWaf.add(MenuItemBypassWafHex);
+
+        JMenuItem MenuItemBypassWafRandom = new JMenuItem("Random");
+        MenuItemBypassWafRandom.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    System.setProperty("file.encoding", "UTF-8");
+
+                    // 重新加载系统属性
+                    try {
+                        System.setOut(new java.io.PrintStream(System.out, true, "UTF-8"));
+                    } catch (UnsupportedEncodingException e1) {
+                        e1.printStackTrace();
+                    }
+                    IHttpRequestResponse[] messages = invocation.getSelectedMessages();
+                    byte[] selectedData = null;
+
+                    // 获取上下文类型
+                    int context = invocation.getInvocationContext();
+
+                    if (context == IContextMenuInvocation.CONTEXT_MESSAGE_EDITOR_REQUEST ||
+                            context == IContextMenuInvocation.CONTEXT_MESSAGE_VIEWER_REQUEST) {
+                        // 在请求编辑器或请求查看器中
+                        selectedData = messages[0].getRequest();
+                    } else if (context == IContextMenuInvocation.CONTEXT_MESSAGE_EDITOR_RESPONSE ||
+                            context == IContextMenuInvocation.CONTEXT_MESSAGE_VIEWER_RESPONSE) {
+                        // 在响应编辑器或响应查看器中
+                        selectedData = messages[0].getResponse();
+                    }
+                    // 获取用户所选文本的起始和结束位置
+                    int[] selectionBounds = invocation.getSelectionBounds();
+                    int selectionStart = selectionBounds[0];
+                    int selectionEnd = selectionBounds[1];
+                    String selectedContent = new String(selectedData);
+                    callbacks.printOutput(selectedContent.substring(selectionStart,selectionEnd));
+                    //对selectedContent.substring(selectionStart,selectionEnd) 进行编码
+                    String  encodeedPayload = encode.encodeToJsonRandom(selectedContent.substring(selectionStart,selectionEnd));
+                    InsertPayload iPayload = new InsertPayload();
+                    iPayload.inputString(encodeedPayload);
+                } catch(Exception e1){
+                    callbacks.printError(e1.getMessage());
+                }
+            }
+        });
+        CheckerMenuItemBypassWaf.add(MenuItemBypassWafRandom);
+
         CheckerMenuItem.add(CheckerMenuItemBypassWaf);
 
         list.add(CheckerMenuItem);

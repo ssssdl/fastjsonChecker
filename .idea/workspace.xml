@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="1、修复了日志中文输出乱码问题；&#10;2、更改了mac下粘贴操作逻辑。">
+    <list default="true" id="fbc99096-5d66-48d2-a525-f2a9599fd1f8" name="变更" comment="1、修改了提示信息&#10;2、basswaf增加了混合编码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,10 +62,34 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1707010377" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,13 +100,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\code\fastjsonChecker\fastjsonChecker\img" />
@@ -147,7 +171,9 @@
       <workItem from="1706150680930" duration="2231000" />
       <workItem from="1706772395885" duration="68000" />
       <workItem from="1706860541884" duration="3387000" />
-      <workItem from="1707006929130" duration="2572000" />
+      <workItem from="1707006929130" duration="4716000" />
+      <workItem from="1708673812210" duration="5619000" />
+      <workItem from="1709516344531" duration="7356000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1705654780911</created>
@@ -198,7 +224,28 @@
       <option name="project" value="LOCAL" />
       <updated>1707008729588</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1、修复了日志中文输出乱码问题；&#10;2、更改了mac下粘贴操作逻辑。">
+      <created>1707009631858</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707009631858</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1、修改了提示信息&#10;2、basswaf增加了混合编码">
+      <created>1709523157744</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709523157744</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1、修改了提示信息&#10;2、basswaf增加了混合编码">
+      <created>1709523347178</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1709523347178</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +269,7 @@
     <MESSAGE value="初步实现unicode编码" />
     <MESSAGE value="添加了两种编码" />
     <MESSAGE value="1、修复了日志中文输出乱码问题；&#10;2、更改了mac下粘贴操作逻辑。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、修复了日志中文输出乱码问题；&#10;2、更改了mac下粘贴操作逻辑。" />
+    <MESSAGE value="1、修改了提示信息&#10;2、basswaf增加了混合编码" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、修改了提示信息&#10;2、basswaf增加了混合编码" />
   </component>
 </project>
