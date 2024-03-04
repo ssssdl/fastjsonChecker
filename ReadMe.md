@@ -8,7 +8,7 @@
 ## Usage
 如图，在需要插入payload的地方右键选择对应payload，即可快速插入payload，相关提示会显示在插件日志中，并且支持一些常见的bypass手段:
 ![img.png](img/img.png)
-bypass模块，选中其中一部分，右键指定编码模式，自动将引号内部进行编码
+bypass模块，选中其中一部分，右键指定编码模式，自动将引号内部进行编码1
 ![img_1.png](img/img_1.png)
 ## TODO
 - 优化bypasswaf功能，目前只添加了两种编码和随机混合编码，后期继续加入插入无效字符等混合随机模式
